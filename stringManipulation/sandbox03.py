@@ -13,9 +13,11 @@ s_num = '1F914'
 u = 0
 st = ''
 for s in s_num:
-  i = HEX_LETTERS.find(s)
+  i = HEX_LETTERS.find(s.lower())
+  print(f'pre: {u}, {i}')
   u = u * 16 | i
-#print(chr(u))
+  print(f'mdn: {u}')
+print(chr(u))
 '''
 if u < 0x80:
   st += chr(u)
@@ -54,7 +56,8 @@ code = 0x1F600
 #while code <= 0x1F64F:
 while code <= 0x1F915:
   ch = chr(code)
-  print(ch,f':{code}', end='')
+  #print(ch,f':{code}', end='')
   code += 1
   if code % 0x10 == 0:
-    print()
+    pass
+    #print()
