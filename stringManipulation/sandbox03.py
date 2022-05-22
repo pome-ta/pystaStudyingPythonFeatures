@@ -18,7 +18,7 @@ for s in s_num:
   u = u * 16 | i
   print(f'mdn: {u}')
 print(chr(u))
-'''
+
 if u < 0x80:
   st += chr(u)
 elif u < 0x800:
@@ -46,7 +46,7 @@ else:
   st += chr(0x80 | ((u >> 12) & 0x3f))
   st += chr(0x80 | ((u >> 6) & 0x3f))
   st += chr(0x80 | (u & 0x3f))
-'''
+
 emoji = '🤔'
 bemoji = emoji.encode('utf-8')
 
