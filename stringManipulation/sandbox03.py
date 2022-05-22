@@ -16,36 +16,36 @@ for s in s_num:
   i = HEX_LETTERS.find(s.lower())
   print(f'pre: {u}, {i}')
   u = u * 16 | i
-  print(f'mdn: {u}')
-print(chr(u))
+  #print(f'mdn: {u}')
+  print(chr(u))
 
-if u < 0x80:
-  st += chr(u)
-elif u < 0x800:
-  st += chr(0xc0 | (u >> 6))
-  st += chr(0x80 + (u & 0x3f))
-elif u < 0x10000:
-  st += chr(0xe0 | (u >> 12))
-  st += chr(0x80 | ((u >> 6) & 0x3f))
-  st += chr(0x80 | (u & 0x3f))
-elif u < 0x200000:
-  st += chr(0xf0 | (u >> 18))
-  st += chr(0x80 | ((u >> 12) & 0x3f))
-  st += chr(0x80 | ((u >> 6) & 0x3f))
-  st += chr(0x80 | (u & 0x3f))
-elif u < 0x4000000:
-  st += chr(0xf8 | (u >> 24))
-  st += chr(0x80 | ((u >> 18) & 0x3f))
-  st += chr(0x80 | ((u >> 12) & 0x3f))
-  st += chr(0x80 | ((u >> 6) & 0x3f))
-  st += chr(0x80 | (u & 0x3f))
-else:
-  st += chr(0xfc | (u >> 30))
-  st += chr(0x80 | ((u >> 24) & 0x3f))
-  st += chr(0x80 | ((u >> 18) & 0x3f))
-  st += chr(0x80 | ((u >> 12) & 0x3f))
-  st += chr(0x80 | ((u >> 6) & 0x3f))
-  st += chr(0x80 | (u & 0x3f))
+  if u < 0x80:
+    st += chr(u)
+  elif u < 0x800:
+    st += chr(0xc0 | (u >> 6))
+    st += chr(0x80 + (u & 0x3f))
+  elif u < 0x10000:
+    st += chr(0xe0 | (u >> 12))
+    st += chr(0x80 | ((u >> 6) & 0x3f))
+    st += chr(0x80 | (u & 0x3f))
+  elif u < 0x200000:
+    st += chr(0xf0 | (u >> 18))
+    st += chr(0x80 | ((u >> 12) & 0x3f))
+    st += chr(0x80 | ((u >> 6) & 0x3f))
+    st += chr(0x80 | (u & 0x3f))
+  elif u < 0x4000000:
+    st += chr(0xf8 | (u >> 24))
+    st += chr(0x80 | ((u >> 18) & 0x3f))
+    st += chr(0x80 | ((u >> 12) & 0x3f))
+    st += chr(0x80 | ((u >> 6) & 0x3f))
+    st += chr(0x80 | (u & 0x3f))
+  else:
+    st += chr(0xfc | (u >> 30))
+    st += chr(0x80 | ((u >> 24) & 0x3f))
+    st += chr(0x80 | ((u >> 18) & 0x3f))
+    st += chr(0x80 | ((u >> 12) & 0x3f))
+    st += chr(0x80 | ((u >> 6) & 0x3f))
+    st += chr(0x80 | (u & 0x3f))
 
 emoji = '🤔'
 bemoji = emoji.encode('utf-8')
